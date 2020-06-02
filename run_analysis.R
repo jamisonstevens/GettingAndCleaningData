@@ -56,6 +56,6 @@ run_analysis <- function() {
   
   # Data Set of Averages by Subject
   Average_Data <- Mean_STDev_Data %>% group_by(SubjectNumber, Activity) %>% summarize_all(list(mean))
-  write.table(Average_Data, "AverageData.txt")
+  write.table(Average_Data, "AverageData.txt", row.name = FALSE)
   Average_Table <- read.table(paste(getwd(), "/AverageData.txt", sep = ""))
 }
